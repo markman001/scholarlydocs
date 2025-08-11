@@ -1,0 +1,27 @@
+# robots.txt for https://scholarlydocs.store
+# Allow all well-behaved bots to crawl the product pages
+User-agent: *
+# Allow product pages
+Allow: /product/
+
+# Block common admin and login pages (WordPress / WooCommerce)
+Disallow: /wp-admin/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+
+# Prevent crawling of cart/checkout/account pages that shouldn't be indexed
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /my-account/
+
+# Avoid crawling URL parameters that create duplicate content (supported by most major crawlers)
+Disallow: /*?add-to-cart
+Disallow: /*?orderby=
+Disallow: /*?filter=
+
+# Crawl-delay (optional, for lightweight servers)
+# Some crawlers honor this — values are seconds
+Crawl-delay: 5
+
+# Link to sitemap (make sure sitemap exists at this URL)
+Sitemap: https://scholarlydocs.store/sitemap.xml
